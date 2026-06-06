@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div class="card" style="max-width:400px;margin:100px auto;">
+<h2>Login</h2>
+<input type="text" id="username" placeholder="Username"><br><br>
+<input type="password" id="password" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
+<p style="margin-top:15px">Username: admin<br>Password: admin123</p>
+</div>
+</div>
+<script>
+function login(){
+const u=document.getElementById('username').value;
+const p=document.getElementById('password').value;
+if(u==='admin' && p==='admin123'){
+localStorage.setItem('loggedIn','true');
+window.location='index.html';
+}else{
+alert('Invalid Credentials');
+}
+}
+</script>
+</body>
+</html>
