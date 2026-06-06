@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Task Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
 
+<header class="header">
+<div>
+<h1>Business Task & Performance Dashboard</h1>
+<p>Professional workflow and performance tracking system</p>
+</div>
+<button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="stats">
+<div class="stat-card"><h2 id="totalTasks">0</h2><p>Total Tasks</p></div>
+<div class="stat-card"><h2 id="completedTasks">0</h2><p>Completed Tasks</p></div>
+<div class="stat-card"><h2 id="pendingTasks">0</h2><p>Pending Tasks</p></div>
+</div>
+
+<section class="card">
+<h2>Add New Task</h2>
+<div class="form">
+<input type="text" id="employee" placeholder="Employee Name">
+<input type="text" id="task" placeholder="Task Description">
+<select id="priority">
+<option>High</option>
+<option selected>Medium</option>
+<option>Low</option>
+</select>
+<input type="date" id="deadline">
+<button onclick="addTask()">Add Task</button>
+</div>
+</section>
+
+<section class="card">
+<h2>Task List</h2>
+<input class="search-box" type="text" id="search" placeholder="Search Employee" onkeyup="displayTasks()">
+<table id="taskTable">
+<thead>
+<tr>
+<th>Employee</th>
+<th>Task</th>
+<th>Priority</th>
+<th>Deadline</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</section>
+
+<section class="card">
+<h2>Performance Summary</h2>
+<div id="summary"></div>
+<canvas id="performanceChart"></canvas>
+</section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
